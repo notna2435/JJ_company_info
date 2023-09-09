@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Data</title>
+</head>
+<style>
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+</style>
+<body>
+    <table class="styled-table">
+        <tr>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Award</th>
+            <th>Website Link</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+        </tr>
+        {% for company in manual %}
+        <tr>
+            <td>{{ company.id }}</td>
+            <td>{{ company.company_name }}</td>
+            <td>{{ company.award }}</td>
+            <td>{{ company.link }}</td>
+            <td>{{ company.email }}</td>
+            <td>{{ company.phone_number }}</td>
+            <td>{{ company.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
